@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import AppRouter from "router/AppRouter";
+import { firebaseApp } from "./config/firebase";
+import ThemeProvider from "config/mui";
+import Container from "components/common/Container";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider>
+        <Container>
+          <AppRouter />
+        </Container>
+      </ThemeProvider>
     </div>
   );
 }
