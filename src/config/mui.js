@@ -6,7 +6,7 @@ const ThemeProvider = (props) => {
         palette: {
             primary: {
                 main: blue[700]
-            }
+            },
         },
         typography: {
             fontFamily: '"Zen Kaku Gothic New", sans-serif;'
