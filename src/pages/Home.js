@@ -4,14 +4,12 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 const Home = () => {
     const navigate = useNavigate();
 
-    const LinkButton = (props) => {
+    const LinkButton = props => {
         const { to, text } = props;
 
-        const clickHandler = () => {
-            navigate(to);
-        }
+        const clickHandler = () => navigate(to);
 
-        return <Button size="large" onClick={clickHandler}>{text}</Button>
+        return <Button size="large" variant="outlined" onClick={clickHandler}>{text}</Button>
     }
 
     return (

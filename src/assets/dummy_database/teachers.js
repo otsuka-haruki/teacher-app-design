@@ -6,7 +6,7 @@ export const dummyTeachers = [
         major: '法学部',
         age: 21,
         sex: '男性',
-        message: '',
+        message: '受験は長く厳しい道のりですが、一緒に頑張りましょう！',
         subjects: ['現代文', '数学1・A', '英語'],
         price: {
             trial: 1000,
@@ -20,7 +20,7 @@ export const dummyTeachers = [
         major: '経済学部',
         age: 19,
         sex: '女性',
-        message: '',
+        message: '自身の受験経験をもとに、丁寧な指導を行います。',
         subjects: ['数学1・A', '英語'],
         price: {
             trial: 1000,
@@ -34,11 +34,11 @@ export const dummyTeachers = [
         major: '文学部',
         age: 20,
         sex: '男性',
-        message: '',
+        message: '予備校に通わずに東大に合格しました。オンラインの指導も対応しています。',
         subjects: ['古文', '漢文', '数学1・A', '世界史',],
         price: {
-            trial: 1000,
-            contract: 1500
+            trial: 2000,
+            contract: 3000
         }
     },
     {
@@ -48,11 +48,11 @@ export const dummyTeachers = [
         major: '工学部',
         age: 23,
         sex: '女性',
-        message: '',
+        message: '浪人経験があり、浪人生の指導も行っています。よろしくお願いします。',
         subjects: ['数学3', '物理', '化学',],
         price: {
-            trial: 1000,
-            contract: 1500
+            trial: 2000,
+            contract: 3000
         }
     },
 ]

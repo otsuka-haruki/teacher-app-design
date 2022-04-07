@@ -1,8 +1,9 @@
 import { Container as MuiContainer } from "@mui/material"
-const Container = (props) => {
+
+const Container = ({ children }) => {
     return (
-        <MuiContainer maxWidth="lg">
-            {props.children}
+        <MuiContainer maxWidth="lg" sx={{ mt: '6rem' }}>
+            {children}
         </MuiContainer>
     )
 }

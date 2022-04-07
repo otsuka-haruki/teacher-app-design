@@ -1,21 +1,21 @@
 import { createTheme, ThemeProvider as MuiThemeProvider } from "@mui/material";
 import { blue } from "@mui/material/colors";
 
-const ThemeProvider = (props) => {
+const ThemeProvider = ({ children }) => {
     const theme = createTheme({
         palette: {
             primary: {
-                main: blue[700]
-            },
+                main: blue[500],
+            }
         },
         typography: {
-            fontFamily: '"Zen Kaku Gothic New", sans-serif;'
+            fontFamily: '"Roboto" ,"Zen Kaku Gothic New", sans-serif;'
         }
     });
 
     return (
         <MuiThemeProvider theme={theme}>
-            {props.children}
+            {children}
         </MuiThemeProvider>
     )
 }

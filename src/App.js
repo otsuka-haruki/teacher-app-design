@@ -1,15 +1,15 @@
 import AppRouter from "router/AppRouter";
 import { firebaseApp } from "./config/firebase";
 import ThemeProvider from "config/mui";
-import Container from "components/common/Container";
+import Layout from "components/layout/Layout";
 
 function App() {
   return (
     <div className="App">
       <ThemeProvider>
-        <Container>
+        <Layout>
           <AppRouter />
-        </Container>
+        </Layout>
       </ThemeProvider>
     </div>
   );
