@@ -1,5 +1,7 @@
 import { Box, Card, CardContent, Button, Typography, Grid, FormGroup, Chip } from "@mui/material";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+// import DoneIcon from '@mui/icons-material/Done';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import { v4 as uuid } from "uuid";
 import CardActionsFlexRight from "components/common/CardActionsFlexRight";
 import SelectBox from "components/common/SelectBox";
@@ -13,7 +15,6 @@ const SearchBox = () => {
 
     const Chips = (props) => {
         const handleClick = event => setSelectedSubjects(prev => [...prev, event.target.closest('div').id]);
-
         const handleDelete = event => setSelectedSubjects(prev => prev.filter(n => n !== event.target.closest('div').id));
 
         const chips = props.options.map(option => {
@@ -26,6 +27,7 @@ const SearchBox = () => {
                         color="primary"
                         onClick={handleClick}
                         onDelete={handleDelete}
+                    // icon={<DoneIcon />}
                     />
                     : <Chip
                         key={uuid()}
@@ -47,7 +49,7 @@ const SearchBox = () => {
                     <Typography variant="h5" sx={{ mb: '1rem' }}>講師を検索</Typography>
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={4}>
-                            <SelectBox label="講師の大学" options={universities} />
+                            <SelectBox label="講師の大学" options={universities} icon={<SchoolRoundedIcon sx={{ mr: 1 }} />} />
                         </Grid>
                         <Grid item xs={6} md={4}>
                             <SelectBox label="お住まいの地域" options={places} />
@@ -65,7 +67,7 @@ const SearchBox = () => {
                                 </ResponsiveStack>
                             </FormGroup>
                         </Box>
-                        <Box sx={{ mb: '1rem' }}>
+                        <Box>
                             <FormGroup>
                                 <Typography variant="body1">対応曜日</Typography>
                                 <ResponsiveStack spacing={1}>
@@ -76,7 +78,7 @@ const SearchBox = () => {
                     </AccourdionBox>
                 </CardContent>
                 <CardActionsFlexRight>
-                    <Button variant="contained" startIcon={<SearchRoundedIcon />}>検索する</Button>
+                    <Button fullWidth={window.innerWidth < 1000} variant="contained" size="large" startIcon={<SearchRoundedIcon />}>検索する</Button>
                 </CardActionsFlexRight>
             </Card>
         </Box>

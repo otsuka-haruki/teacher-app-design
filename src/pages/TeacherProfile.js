@@ -1,8 +1,21 @@
-import React from 'react'
+import { Grid } from "@mui/material";
+import ProfileHeader from "components/pages/teacherProfile/ProfileHeader";
+import AboutCard from "components/pages/teacherProfile/AboutCard";
+import DetailCard from "components/pages/teacherProfile/DetailCard";
 
 const TeacherProfile = () => {
     return (
-        <div>TeacherProfile</div>
+        <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <ProfileHeader />
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <AboutCard />
+            </Grid>
+            <Grid item xs={12} md={8}>
+                <DetailCard />
+            </Grid>
+        </Grid>
     )
 }
 
