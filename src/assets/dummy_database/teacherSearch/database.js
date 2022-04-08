@@ -1,4 +1,4 @@
-export const dummyTeachers = [
+export const teachers = [
     {
         name: '佐藤大輝',
         profileImageUrl: 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80',
@@ -55,4 +55,21 @@ export const dummyTeachers = [
             contract: 3000
         }
     },
-]
+];
+
+export const universities = [
+    '東京大学',
+    '慶應義塾大学',
+    '早稲田大学',
+    '一橋大学',
+    '京都大学',
+    '大阪大学',
+];
+
+export const places = ['東京都', '神奈川県', '埼玉県', '千葉県'];
+
+export const studentTypes = ['小学生', '中学生', '高校生'];
+
+export const subjects = ['国語', '算数', '数学', '英語', '社会', '理科'];
+
+export const days = ["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日"];
