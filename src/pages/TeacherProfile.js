@@ -9,10 +9,10 @@ const TeacherProfile = () => {
             <Grid item xs={12}>
                 <ProfileHeader />
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} lg={4}>
                 <AboutCard />
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} lg={8}>
                 <DetailCard />
             </Grid>
         </Grid>

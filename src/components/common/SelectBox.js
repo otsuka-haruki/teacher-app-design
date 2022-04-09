@@ -3,9 +3,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
 import { v4 as uuid } from 'uuid';
-import Typography from '@mui/material/Typography'
 
 const SelectBox = (props) => {
     const { label, options, icon } = props;
