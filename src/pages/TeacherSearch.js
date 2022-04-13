@@ -1,5 +1,5 @@
-import TeacherCards from "components/pages/teacherSearch/TeacherCards";
-import SearchBox from "components/pages/teacherSearch/SearchBox";
+import TeacherCards from "components/Pages/teacherSearch/TeacherCards";
+import SearchBox from "components/Pages/teacherSearch/SearchBox";
 
 const TeacherSearch = () => {
     return (

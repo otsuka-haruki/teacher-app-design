@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Card, CardContent, Typography, Tabs, Tab } from "@mui/material";
+import { Card, CardContent, Typography, Tabs, Tab, Box } from "@mui/material";
 import FaceRoundedIcon from '@mui/icons-material/FaceRounded';
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
+import { v4 as uuid } from "uuid";
 import { teachers } from "assets/dummy_database/teacherSearch/database"
 import TextBox from "./TextBox";
 import TabPanel from "components/common/TabPanel";
@@ -14,7 +15,7 @@ const AboutCard = () => {
     const handleChange = (event, newValue) => setValue(newValue);
 
     return (
-        <Card>
+        <Card sx={{ boxShadow: 'none' }}>
             <CardContent>
                 <Typography variant="h6">私について</Typography>
                 <Tabs variant="fullWidth" value={value} onChange={handleChange} >
@@ -28,19 +29,23 @@ const AboutCard = () => {
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     <TextBox title='経歴'>
-                        <Typography variant="body1">高校 : 私立桜蔭高校</Typography>
-                        <Typography variant="body1">中学 : 私立桜蔭中学</Typography>
-                    </TextBox>
-                    <TextBox title='指導歴'>
-                        <Typography variant="body1">年数 : 1年半</Typography>
-                        <Typography variant="body1">実績: 東京大学現役合格2人</Typography>
+                        <Typography variant="body1">高校 : {teacher.education.highSchool}</Typography>
+                        <Typography variant="body1">中学 : {teacher.education.juniorHighSbool}</Typography>
                     </TextBox>
                     <TextBox title='最寄りの路線'>
-                        <Typography variant="body1">東京メトロ銀座線</Typography>
+                        <Typography variant="body1">{teacher.location.railway}</Typography>
                     </TextBox>
                     <TextBox title='趣味・特技'>
-                        <Typography variant="body1">ピアノ : 小学4年生から続けています</Typography>
-                        <Typography variant="body1">映画 : 洋画が特に好きです</Typography>
+                        {teacher.skills.map(skill => {
+                            return (
+                                <Box key={uuid()} sx={{ mt: 1 }}>
+                                    <Typography variant="body1">{skill.title}</Typography>
+                                    <Typography variant="body1">{skill.description}</Typography>
+                                </Box>
+                            )
+                        }
+                        )
+                        }
                     </TextBox>
                 </TabPanel>
             </CardContent>

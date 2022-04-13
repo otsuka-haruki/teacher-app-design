@@ -1,8 +1,11 @@
 import { Box, Card, CardMedia, CardContent, Typography, Button, Avatar, Stack } from '@mui/material';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
+// import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { teachers } from 'assets/dummy_database/teacherSearch/database';
-import { breakpoints } from 'utils/globalVariables';
-import CardActionsFlexRight from 'components/common/CardActionsFlexRight';
+// import { breakpoints } from 'utils/globalVariables';
+// import CardActionsFlexRight from 'components/common/CardActionsFlexRight';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import StarHalfRoundedIcon from '@mui/icons-material/StarHalfRounded';
+import { amber } from '@mui/material/colors';
 
 const ProfileHeader = () => {
     // TODO とりあえずの間に合わせでサイズを取っているので後々ちゃんとしたコードにすること
@@ -21,7 +24,7 @@ const ProfileHeader = () => {
     }
 
     return (
-        <Card>
+        <Card sx={{ boxShadow: 'none' }}>
             <CardMedia
                 component="img"
                 height={device === 'xs' ? 16 * 8 : 16 * 12}
@@ -29,7 +32,7 @@ const ProfileHeader = () => {
                 alt="banner"
             />
             <CardContent>
-                <Box sx={{ display: { xs: 'block', md: 'flex' }, height: { xs: 16 * 6, md: 16 * 3 }, transform: { xs: 'translateY(-80px)', md: 'none' } }}>
+                <Box sx={{ display: { xs: 'block', md: 'flex' }, height: { xs: 16 * 6, md: 16 * 5 }, transform: { xs: 'translateY(-80px)', md: 'none' } }}>
                     <Avatar
                         alt="Profile"
                         src={profileImageUrl}
@@ -38,12 +41,18 @@ const ProfileHeader = () => {
                     <Box>
                         <Typography variant="h5" sx={{ mr: 1 }}>{name}</Typography>
                         <Typography variant="body1" sx={{ color: 'rgb(0 0 0 /0.7)' }}>東京大学・{major} / {age}歳・{sex}</Typography>
+                        <Typography variant="body1"><StarRoundedIcon sx={{ color: amber[500] }} /><StarRoundedIcon sx={{ color: amber[500] }} /><StarRoundedIcon sx={{ color: amber[500] }} /><StarRoundedIcon sx={{ color: amber[500] }} /><StarHalfRoundedIcon sx={{ color: amber[500] }} /></Typography>
                     </Box>
+
                 </Box>
+                {/* <Box>
+                    <Typography variant="h6">料金</Typography>
+                    <Typography variant="body1">体験授業千円 / 30分</Typography>
+                </Box> */}
             </CardContent>
-            <CardActionsFlexRight>
+            {/* <CardActionsFlexRight>
                 <Button variant="contained" size='large' endIcon={<SendRoundedIcon />}>体験授業を申し込む</Button>
-            </CardActionsFlexRight>
+            </CardActionsFlexRight> */}
         </Card>
     )
 }

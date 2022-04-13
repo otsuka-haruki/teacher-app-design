@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { v4 as uuid } from "uuid";
 import { teachers as teacherDatabase } from "assets/dummy_database/teacherSearch/database";
-import TeacherCard from "components/pages/teacherSearch/TeacherCard";
+import TeacherCard from "./TeacherCard";
 
 const TeacherCards = () => {
     const teachers = [...teacherDatabase, ...teacherDatabase, ...teacherDatabase];

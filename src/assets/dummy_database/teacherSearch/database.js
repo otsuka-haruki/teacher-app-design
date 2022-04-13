@@ -53,8 +53,44 @@ export const teachers = [
         price: {
             trial: 2000,
             contract: 3000
-        }
+        },
+        education: {
+            juniorHighSbool: '私立桜蔭中学',
+            highSchool: '私立桜蔭高校'
+        },
+        teachingCareer: {
+            years: 1,
+            count: 24,
+            rating: 4.4,
+            reviews: {
+                count: 4
+            },
+            result: '東京大学現役合格2人'
+        },
+        location: {
+            railway: '東京メトロ銀座線'
+        },
+        skills: [
+            {
+                title: 'ピアノ',
+                description: '小学4年生から続けています'
+            },
+            {
+                title: '映画',
+                description: '洋画が特に好きです'
+            }
+        ]
     },
+];
+
+export const demoAvailableTimes = [
+    { day: '月曜日', morning: 1, afternoon: 0, night: 1 },
+    { day: '火曜日', morning: 1, afternoon: 0, night: 1 },
+    { day: '水曜日', morning: 1, afternoon: 0, night: 1 },
+    { day: '木曜日', morning: 1, afternoon: 0, night: 1 },
+    { day: '金曜日', morning: 1, afternoon: 0, night: 1 },
+    { day: '土曜日', morning: 1, afternoon: 0, night: 1 },
+    { day: '日曜日', morning: 1, afternoon: 0, night: 1 }
 ];
 
 export const universities = [

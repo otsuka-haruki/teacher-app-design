@@ -1,29 +1,16 @@
 import { useState } from "react";
-import { Card, CardContent, Tabs, Tab, Typography, Chip, TableContainer, Table, TableHead, TableBody, TableCell, TableRow } from "@mui/material";
+import { Card, CardContent, Tabs, Tab, Typography, Chip } from "@mui/material";
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ChangeHistoryRoundedIcon from '@mui/icons-material/ChangeHistoryRounded';
 import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import { v4 as uuid } from "uuid";
 import TextBox from "./TextBox";
 import TabPanel from "components/common/TabPanel";
 import ResponsiveStack from "components/common/ResponsiveStack";
 import { tokyoMainCities } from "assets/dummy_database/teacherSearch/database";
-import { red, teal } from "@mui/material/colors";
-import { BoltRounded } from "@mui/icons-material";
-
-const demoAvailableTimes = [
-    { day: '月曜日', morning: 1, afternoon: 0, night: 1 },
-    { day: '火曜日', morning: 1, afternoon: 0, night: 1 },
-    { day: '水曜日', morning: 1, afternoon: 0, night: 1 },
-    { day: '木曜日', morning: 1, afternoon: 0, night: 1 },
-    { day: '金曜日', morning: 1, afternoon: 0, night: 1 },
-    { day: '土曜日', morning: 1, afternoon: 0, night: 1 },
-    { day: '日曜日', morning: 1, afternoon: 0, night: 1 }
-]
+import AvailableTime from "./Detail/AvailableTime";
 
 const DetailCard = () => {
     const [value, setValue] = useState(0);
@@ -31,7 +18,7 @@ const DetailCard = () => {
     const handleChange = (event, newValue) => setValue(newValue);
 
     return (
-        <Card>
+        <Card sx={{ boxShadow: 'none' }}>
             <CardContent>
                 <Typography variant="h6">指導可能な条件</Typography>
                 <Tabs value={value} onChange={handleChange} variant="fullWidth">
@@ -89,33 +76,7 @@ const DetailCard = () => {
                     </TextBox>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <TableContainer >
-                        <Table>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell sx={{ pr: 0, pl: 0 }} align='center'>曜日</TableCell>
-                                    <TableCell sx={{ pr: 0, pl: 0 }} align='center' >午前中</TableCell>
-                                    <TableCell sx={{ pr: 0, pl: 0 }} align='center' >12時~18時</TableCell>
-                                    <TableCell sx={{ pr: 0, pl: 0 }} align='center' >18時~</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {demoAvailableTimes.map(element => (
-                                    <TableRow
-                                        key={uuid()}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                    >
-                                        <TableCell align='center' component="th" scope="row">
-                                            {element.day}
-                                        </TableCell>
-                                        <TableCell align='center'><CheckCircleRoundedIcon sx={{ fontSize: '1.7rem', color: teal[500] }} /></TableCell>
-                                        <TableCell align='center'><CancelRoundedIcon sx={{ fontSize: '1.7rem', color: red[500] }} /></TableCell>
-                                        <TableCell align='center'><CheckCircleRoundedIcon sx={{ fontSize: '1.7rem', color: teal[500] }} /></TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                    <AvailableTime />
                 </TabPanel>
             </CardContent>
         </Card>
