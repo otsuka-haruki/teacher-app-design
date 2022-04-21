@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import BookingModals from "pages/BookingModals";
 import TeacherSearch from "pages/TeacherSearch";
 import TeacherProfile from "pages/TeacherProfile";
-import ClassRoom from "pages/ClassRoom";
+import ClassRoom from "pages/Classroom";
 import Home from "pages/Home";
 
 const AppRouter = () => {
