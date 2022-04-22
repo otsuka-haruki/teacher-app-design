@@ -1,11 +1,17 @@
-import { CardContent, Typography } from "@mui/material";
+import { CardContent, Typography, Link } from "@mui/material";
+import { blue } from "@mui/material/colors";
 import CardWithNoShadow from "components/common/CardWithNoShadow";
 
 const ClassroomHeader = () => {
     return (
-        <CardWithNoShadow>
+        <CardWithNoShadow sx={{ bgcolor: blue[500], color: '#fff' }}>
             <CardContent>
-                <Typography variant="h3" >Header</Typography>
+                <Typography variant="h5">授業の情報</Typography>
+                <Typography variant="h6">時間: 18:00 - 19:30</Typography>
+                <Typography variant="body1" sx={{ mt: 1 }}><Link href="https://google.com" sx={{ color: 'white', textDecorationColor: 'white' }}>https://zoom.us/zoom-link-something</Link>
+                </Typography>
+                <Typography variant="body1" sx={{ mt: 1 }}>講師 : 佐藤先生</Typography>
+                <Typography variant="body1" sx={{ mt: 1 }}>科目 : 世界史</Typography>
             </CardContent>
         </CardWithNoShadow>
     )
