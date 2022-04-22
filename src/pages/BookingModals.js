@@ -1,4 +1,4 @@
-import BookModalPlain from "components/Pages/modals/BookModalPlain"
+import BookModalPlain from "components/pages/modals/BookModalPlain"
 
 
 const BookingModals = () => {

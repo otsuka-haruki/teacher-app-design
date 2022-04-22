@@ -1,9 +1,9 @@
 import { useTheme } from '@mui/material/styles';
 import { Grid } from "@mui/material";
 import useMediaQuery from '@mui/material/useMediaQuery';
-import ClassroomHeader from "components/Pages/classroom/ClassroomHeader";
-import ClassroomChat from "components/Pages/classroom/ClassroomChat";
-import ClassroomSidebox from "components/Pages/classroom/ClassroomSidebox";
+import ClassroomHeader from "components/pages/classroom/ClassroomHeader";
+import ClassroomChat from "components/pages/classroom/ClassroomChat";
+import ClassroomSidebox from "components/pages/classroom/ClassroomSidebox";
 
 const Classroom = () => {
     const theme = useTheme();
