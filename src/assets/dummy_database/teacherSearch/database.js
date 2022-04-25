@@ -48,11 +48,11 @@ export const teachers = [
         major: '工学部',
         age: 23,
         sex: '女性',
-        message: '浪人経験があり、浪人生の指導も行っています。よろしくお願いします。',
+        message: '浪人経験があり、浪人生の指導も行っています。よろしくお願いします。受験は長く厳しい道のりですが、一緒に頑張りましょう！。',
         subjects: ['数学3', '物理', '化学',],
         price: {
-            trial: 2000,
-            contract: 3000
+            trial: '2,000',
+            contract: '3,000'
         },
         education: {
             juniorHighSbool: '私立桜蔭中学',

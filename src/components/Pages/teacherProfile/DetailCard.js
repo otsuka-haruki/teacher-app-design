@@ -20,7 +20,7 @@ const DetailCard = () => {
     return (
         <Card sx={{ boxShadow: 'none' }}>
             <CardContent>
-                <Typography variant="h6">指導可能な条件</Typography>
+                <Typography variant="h5">指導について</Typography>
                 <Tabs value={value} onChange={handleChange} variant="fullWidth">
                     <Tab icon={<MenuBookRoundedIcon />} iconPosition="start" label="科目" />
                     <Tab icon={<LocationOnRoundedIcon />} iconPosition="start" label="地域" />
