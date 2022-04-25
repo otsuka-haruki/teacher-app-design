@@ -3,17 +3,21 @@ import { Card, CardContent, Box, Typography, CardActions, Button, Tabs, Tab, Gri
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import CurrencyYenRoundedIcon from '@mui/icons-material/CurrencyYenRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import SellRoundedIcon from '@mui/icons-material/SellRounded';
+import SwipeableViews from 'react-swipeable-views';
 import TextBox from "./TextBox";
 import TabPanel from "components/common/TabPanel";
 import { teachers } from "assets/dummy_database/teacherSearch/database";
 import CardWithNoShadow from "components/common/CardWithNoShadow";
-import { blue, blueGrey, grey } from "@mui/material/colors";
+import { blue, blueGrey } from "@mui/material/colors";
 
 const PriceCard = () => {
     const [value, setValue] = useState(0);
     const teacher = teachers[3];
 
     const handleChange = (event, newValue) => setValue(newValue);
+
+    const handleChangeIndex = index => setValue(index);
 
     return (
         <CardWithNoShadow>
@@ -22,47 +26,50 @@ const PriceCard = () => {
                     <Tab icon={<CurrencyYenRoundedIcon />} iconPosition="start" label="料金プラン" />
                     <Tab icon={<StarRoundedIcon />} iconPosition="start" label="指導実績" />
                 </Tabs>
-                <TabPanel value={value} index={0} sx={{ pt: 2 }}>
-                    <Grid container spacing={1}>
-                        <Grid item xs={6}>
-                            <Card>
-                                <CardContent sx={{ p: 0, height: '14rem', display: 'flex', flexDirection: 'column', '&:last-child': { pb: 0 } }}>
-                                    <Box sx={{ p: 2, height: '80%', bgcolor: blueGrey[100] }}>
-                                        <Typography variant="h6" sx={{ mb: 1 }}>通常料金</Typography>
-                                        <Typography variant="body1">体験授業後は通常価格に移行します</Typography>
-                                    </Box>
-                                    <Box sx={{ p: 1, height: '20%', textAlign: 'center', bgcolor: blueGrey[300], color: 'white' }}>
-                                        <Typography variant="body1"><span style={{ fontSize: '1.5rem' }}>{teacher.price.contract}円</span>/30分</Typography>
-                                    </Box>
-                                </CardContent>
-                            </Card>
+                <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
+                    <TabPanel value={value} index={0} sx={{ pt: 2 }}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={6}>
+                                <Card>
+                                    <CardContent sx={{ p: 0, height: '14rem', display: 'flex', flexDirection: 'column', '&:last-child': { pb: 0 } }}>
+                                        <Box sx={{ p: 2, height: '80%', bgcolor: blueGrey[100] }}>
+                                            <Typography variant="h6" sx={{ mb: 1, fontWeight: 400 }}>通常料金</Typography>
+                                            <Typography variant="body1">体験授業後は通常価格に移行します</Typography>
+                                        </Box>
+                                        <Box sx={{ p: 1, height: '20%', textAlign: 'center', bgcolor: blueGrey[300], color: 'white' }}>
+                                            <Typography variant="body1"><span style={{ fontSize: '1.5rem' }}>{teacher.price.contract}円</span>/30分</Typography>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Card>
+                                    <CardContent sx={{ p: 0, height: '14rem', display: 'flex', flexDirection: 'column', '&:last-child': { pb: 0 } }}>
+                                        <Box sx={{ p: 2, height: '80%', bgcolor: blue[100] }}>
+                                            <Typography variant="h6" sx={{ mb: 1, display: 'flex', alignItems: 'center' }}><SellRoundedIcon sx={{ mr: 1 }} />体験料金</Typography>
+                                            <Typography variant="body1">最初の2時間は体験料金でお試しをすることができます。</Typography>
+                                        </Box>
+                                        <Box sx={{ p: 1, height: '20%', textAlign: 'center', bgcolor: blue[500], color: 'white' }}>
+                                            <Typography variant="body1"><span style={{ fontSize: '1.5rem' }}>{teacher.price.trial}円</span>/30分</Typography>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={6}>
-                            <Card>
-                                <CardContent sx={{ p: 0, height: '14rem', display: 'flex', flexDirection: 'column', '&:last-child': { pb: 0 } }}>
-                                    <Box sx={{ p: 2, height: '80%', bgcolor: blue[100] }}>
-                                        <Typography variant="h6" sx={{ mb: 1 }}>体験料金</Typography>
-                                        <Typography variant="body1">最初の2時間は体験料金でお試しをすることができます。</Typography>
-                                    </Box>
-                                    <Box sx={{ p: 1, height: '20%', textAlign: 'center', bgcolor: blue[500], color: 'white' }}>
-                                        <Typography variant="body1"><span style={{ fontSize: '1.5rem' }}>{teacher.price.trial}円</span>/30分</Typography>
-                                    </Box>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    <TextBox title="生徒からの評価">
-                        <Typography variant="body1">{teacher.teachingCareer.rating} / 5.0</Typography>
-                    </TextBox>
-                    <TextBox title="指導回数">
-                        <Typography variant="body1">{teacher.teachingCareer.count}回</Typography>
-                    </TextBox>
-                    <TextBox title="合格実績">
-                        <Typography variant="body1">{teacher.teachingCareer.result} </Typography>
-                    </TextBox>
-                </TabPanel>
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        <TextBox title="生徒からの評価">
+                            <Typography variant="body1">{teacher.teachingCareer.rating} / 5.0</Typography>
+                        </TextBox>
+                        <TextBox title="指導回数">
+                            <Typography variant="body1">{teacher.teachingCareer.count}回</Typography>
+                        </TextBox>
+                        <TextBox title="合格実績">
+                            <Typography variant="body1">{teacher.teachingCareer.result} </Typography>
+                        </TextBox>
+                    </TabPanel>
+                </SwipeableViews>
+
             </CardContent>
             <CardActions>
                 <Button variant="contained" fullWidth size="large" endIcon={<SendRoundedIcon />}>体験授業を申し込む</Button>

@@ -9,7 +9,7 @@ const ThemeProvider = ({ children }) => {
             }
         },
         typography: {
-            fontFamily: '"Roboto" ,"Zen Kaku Gothic New", sans-serif;'
+            fontFamily: '"Roboto", "Zen Kaku Gothic New", sans-serif;'
         }
     });
 
